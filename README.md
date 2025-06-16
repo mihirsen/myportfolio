@@ -31,7 +31,7 @@ Welcome to my personal portfolio website! This is a modern, responsive website b
 
 ## 🔗 Connect With Me
 
-- Portfolio: [mihirsen-me.netlify.app](https://mihirsen-me.netlify.app/)
+- Portfolio: [mihirsen.vercel.app](https://mihirsen.vercel.app/)
 - LinkedIn: [linkedin.com/in/mihir-sen](https://www.linkedin.com/in/mihir-sen/)
 - GitHub: [github.com/mihirsen](https://github.com/mihirsen)
 - Email: mihir123sen@gmail.com

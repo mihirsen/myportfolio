@@ -81,8 +81,8 @@ export const Contact: React.FC = () => {
     {
       icon: "🌐",
       label: "Portfolio",
-      value: "mihirsen-me.netlify.app",
-      link: "https://mihirsen-me.netlify.app/",
+      value: "mihirsen.vercel.app",
+      link: "https://mihirsen.vercel.app/",
     },
     {
       icon: "🔗",
