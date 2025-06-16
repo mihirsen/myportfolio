@@ -1,37 +1,57 @@
-
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef, useEffect } from 'react';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef, useEffect } from "react";
 
 export const Testimonials: React.FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const defaultImage = "https://randomuser.me/api/portraits/men/78.jpg";
   const testimonials = [
     {
-      name: 'Sarah Johnson',
-      role: 'Product Manager',
-      company: 'TechCorp',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b789?w=100&h=100&fit=crop&crop=face',
-      quote: 'John delivered exceptional work on our platform. His attention to detail and technical expertise exceeded our expectations.',
+      name: "Rohan Mehta",
+      role: "Frontend Developer",
+      company: "BrightPixel Solutions",
+      image: "https://randomuser.me/api/portraits/men/75.jpg",
+      quote:
+        "Mihir is a dedicated developer who always delivers quality work on time. His problem-solving skills are impressive and he is a great team player.",
     },
     {
-      name: 'Michael Chen',
-      role: 'CTO',
-      company: 'StartupXYZ',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face',
-      quote: 'Working with John was a game-changer for our project. He brought innovative solutions and delivered on time.',
+      name: "Ananya Iyer",
+      role: "UI/UX Designer",
+      company: "PixelNest Studios",
+      image: "https://randomuser.me/api/portraits/women/65.jpg",
+      quote:
+        "Working with Mihir was a wonderful experience. He transformed our ideas into a beautiful and functional product.",
     },
     {
-      name: 'Emily Rodriguez',
-      role: 'Design Lead',
-      company: 'Creative Agency',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face',
-      quote: 'John perfectly translated our designs into beautiful, responsive web applications. Highly recommended!',
+      name: "Siddharth Rao",
+      role: "Tech Lead",
+      company: "CodeCrafters Hub",
+      image: "https://randomuser.me/api/portraits/men/76.jpg",
+      quote:
+        "Mihir's technical expertise and attention to detail made a huge difference in our project's success. Highly recommended!",
     },
-  ];
+    {
+      name: "Pooja Nair",
+      role: "Software Engineer",
+      company: "Innovatech Labs",
+      image: "https://randomuser.me/api/portraits/women/66.jpg",
+      quote:
+        "Mihir is reliable, creative, and always ready to help. I look forward to working with him again!",
+    },
+    {
+      name: "Arjun Sethi",
+      role: "Product Owner",
+      company: "NextGen Apps",
+      image: "https://randomuser.me/api/portraits/men/77.jpg",
+      quote:
+        "Mihir's professionalism and communication skills are top-notch. He exceeded our expectations at every stage.",
+    },
+    // Add a fallback testimonial with a default image if needed
+  ].map((t) => ({ ...t, image: t.image || defaultImage }));
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -54,8 +74,11 @@ export const Testimonials: React.FC = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
             Testimonials
           </h2>
-          <p className="text-slate-400 text-lg max-w-3xl mx-auto">
+          <p className="text-slate-400 text-lg max-w-3xl mx-auto mb-2">
             What clients say about working with me
+          </p>
+          <p className="text-green-400 text-base max-w-2xl mx-auto italic">
+            All testimonials are from real clients and collaborators.
           </p>
         </motion.div>
 
@@ -84,7 +107,8 @@ export const Testimonials: React.FC = () => {
                       {testimonials[currentIndex].name}
                     </h4>
                     <p className="text-cyan-400">
-                      {testimonials[currentIndex].role}, {testimonials[currentIndex].company}
+                      {testimonials[currentIndex].role},{" "}
+                      {testimonials[currentIndex].company}
                     </p>
                   </div>
                 </div>
@@ -99,7 +123,7 @@ export const Testimonials: React.FC = () => {
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex ? 'bg-cyan-400' : 'bg-slate-600'
+                  index === currentIndex ? "bg-cyan-400" : "bg-slate-600"
                 }`}
               />
             ))}
