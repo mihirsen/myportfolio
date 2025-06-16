@@ -64,14 +64,6 @@ export const Projects: React.FC = () => {
       tech: ["HTML", "CSS", "JavaScript", "Game Logic"],
       github: "https://github.com/mihirsen/snake-game",
     },
-    {
-      title: "Personal Portfolio Website",
-      description:
-        "My personal portfolio website built with React, TypeScript, Tailwind CSS, and Framer Motion. Showcases my work, resume, and contact info.",
-      tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vite"],
-      github: "https://github.com/mihirsen/myportfolio",
-      live: "https://mihirsen.vercel.app/",
-    },
   ];
 
   return (
@@ -165,9 +157,9 @@ export const Projects: React.FC = () => {
                 </div>
 
                 <div className="flex gap-2">
-                  {project.live && (
+                  {"live" in project && project.live && (
                     <motion.a
-                      href={project.live}
+                      href={String(project.live)}
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.05 }}
