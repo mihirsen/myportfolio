@@ -68,7 +68,6 @@ export const Projects: React.FC = () => {
       title: "Personal Portfolio Website",
       description:
         "My personal portfolio website built with React, TypeScript, Tailwind CSS, and Framer Motion. Showcases my work, resume, and contact info.",
-      image: "/mypic",
       tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vite"],
       github: "https://github.com/mihirsen/myportfolio",
       live: "https://mihirsen.vercel.app/",
@@ -117,20 +116,22 @@ export const Projects: React.FC = () => {
                   : "bg-white border-slate-200 hover:border-indigo-400/50 shadow-lg hover:shadow-xl"
               }`}
             >
-              <div className="relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
-                />
-                <div
-                  className={`absolute inset-0 ${
-                    isDark
-                      ? "bg-gradient-to-t from-slate-900/80 to-transparent"
-                      : "bg-gradient-to-t from-black/20 to-transparent"
-                  }`}
-                ></div>
-              </div>
+              {project.image && (
+                <div className="relative overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+                  />
+                  <div
+                    className={`absolute inset-0 ${
+                      isDark
+                        ? "bg-gradient-to-t from-slate-900/80 to-transparent"
+                        : "bg-gradient-to-t from-black/20 to-transparent"
+                    }`}
+                  ></div>
+                </div>
+              )}
 
               <div className="p-6">
                 <h3
