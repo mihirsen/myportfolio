@@ -27,37 +27,28 @@ export const About: React.FC = () => {
       className={`py-20 ${isDark ? "bg-slate-800/50" : "bg-slate-100/50"}`}
     >
       <div className="container mx-auto px-6">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2
-            className={`text-4xl md:text-5xl font-bold mb-6 ${
-              isDark
-                ? "bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent"
-                : "bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent"
-            }`}
-          >
-            About Me
-          </h2>
-          <p
-            className={`text-lg max-w-3xl mx-auto ${
-              isDark ? "text-slate-400" : "text-slate-600"
-            }`}
-          >
-            Electronics and Communication Engineering graduate with strong
-            software development skills
-          </p>
-        </motion.div>
-
-        {/* Use a single column layout for full width */}
-        <div className="max-w-3xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+          {/* Left: Animated Software Developer */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="flex justify-center items-center h-full"
+          >
+            <motion.h3
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={isInView ? { scale: 1, opacity: 1 } : {}}
+              transition={{ duration: 0.8, delay: 0.2, type: "spring" }}
+              className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-600 text-center"
+            >
+              Software Developer
+            </motion.h3>
+          </motion.div>
+
+          {/* Right: About Me Content */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6"
           >
