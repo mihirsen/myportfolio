@@ -76,7 +76,7 @@ export const Navigation: React.FC = () => {
               </motion.button>
             ))}
             <motion.a
-              href="https://drive.google.com/file/d/1yxbcz1xG7u5ILWnKPDcsu4NXQuidT-Ik/view?usp=sharing"
+              href="https://drive.google.com/file/d/1MBUBmoihtn62ty8iGvpiDD-uhO6Ujgbw/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: -20 }}
@@ -153,7 +153,7 @@ export const Navigation: React.FC = () => {
                   </motion.button>
                 ))}
                 <motion.a
-                  href="https://drive.google.com/file/d/1yxbcz1xG7u5ILWnKPDcsu4NXQuidT-Ik/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1MBUBmoihtn62ty8iGvpiDD-uhO6Ujgbw/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   initial={{ opacity: 0, x: -20 }}
